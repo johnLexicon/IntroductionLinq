@@ -16,9 +16,14 @@ namespace IntroductionLinq
             {
                 path = "/Users/johnlundgren";
             }
-            else
+            else if(platform.Equals("Win32NT"))
             {
                 path = @"C:\windows";
+            }
+            else
+            {
+                Console.WriteLine("Not known platform.");
+                return;
             }
 
             ShowLargeFilesWithoutLinq(path);
