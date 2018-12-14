@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace IntroductionLinq
@@ -34,10 +35,23 @@ namespace IntroductionLinq
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             FileInfo[] filesInfo = directoryInfo.GetFiles();
 
+            Array.Sort(filesInfo, new FileInfoComparer());
+
             foreach (var fileInfo in filesInfo)
             {
                 Console.WriteLine($"{fileInfo.Name} : {fileInfo.Length}");
             }
+        }
+    }
+
+    /// <summary>
+    /// Class needed for comparing FileInfo objects by its size. The class has to Implement IComparer.
+    /// </summary>
+    class FileInfoComparer : IComparer<FileInfo>
+    {
+        public int Compare(FileInfo x, FileInfo y)
+        {
+            return y.Length.CompareTo(x.Length);
         }
     }
 }
