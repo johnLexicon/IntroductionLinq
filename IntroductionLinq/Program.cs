@@ -37,9 +37,10 @@ namespace IntroductionLinq
 
             Array.Sort(filesInfo, new FileInfoComparer());
 
-            foreach (var fileInfo in filesInfo)
+            for(int i = 0; i < 5; i++)
             {
-                Console.WriteLine($"{fileInfo.Name} : {fileInfo.Length}");
+                var fileInfo = filesInfo[i];
+                Console.WriteLine($"{fileInfo.Name, -20} : {fileInfo.Length, 10:N0}");
             }
         }
     }
