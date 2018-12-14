@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 
 namespace IntroductionLinq
@@ -28,6 +29,20 @@ namespace IntroductionLinq
             }
 
             ShowLargeFilesWithoutLinq(path);
+            Console.WriteLine(new String('*', 30));
+            ShowLargeFilesWithLinq(path);
+        }
+
+        private static void ShowLargeFilesWithLinq(string path)
+        {
+            var query = new DirectoryInfo(path).GetFiles()
+                                .OrderByDescending(f => f.Length)
+                                .Take(5);
+
+            foreach (var fileInfo in query)
+            {
+                Console.WriteLine($"{fileInfo.Name,-20} : {fileInfo.Length,10:N0}");
+            }
         }
 
         private static void ShowLargeFilesWithoutLinq(string path)
