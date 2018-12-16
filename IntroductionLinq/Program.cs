@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Collections;
 
 namespace IntroductionLinq
 {
@@ -28,6 +29,50 @@ namespace IntroductionLinq
                 return;
             }
 
+            //ShowLargeFiles(path);
+
+            var rep = new Repository();
+
+            //List<Employee> developers = rep.RetrieveDevelopers();
+            //IterateWithIEnumerator(developers.GetEnumerator());
+
+            //Employee[] sales = rep.RetrieveSalesPeople();
+            //IterateWithIEnumerator(sales.GetEnumerator());
+
+            //string strDouble = "2.45";
+            //Console.WriteLine(strDouble.ToDouble());
+
+            //foreach(var dev in rep.DevelopersThatStartWithG())
+            //{
+            //    Console.WriteLine(dev.Name);
+            //}
+
+            //foreach (var salesPerson in rep.SalesPeopleThatStartWithK())
+            //{
+            //    Console.WriteLine(salesPerson.Name);
+            //}
+
+            //foreach (var employee in rep.EmployeesThatStartWithP())
+            //{
+            //    Console.WriteLine(employee.Name);
+            //}
+
+            Console.WriteLine(DelegateDefinitions.AddValues(8, 9));
+            Console.WriteLine(DelegateDefinitions.CalculateArea(6));
+
+            DelegateDefinitions.WriteArea(5);
+        }
+
+        private static void IterateWithIEnumerator(IEnumerator enumerator)
+        {
+            while (enumerator.MoveNext())
+            {
+                System.Console.WriteLine(enumerator.Current);
+            }
+        }
+
+        private static void ShowLargeFiles(string path)
+        {
             ShowLargeFilesWithoutLinq(path);
             Console.WriteLine(new String('*', 30));
             ShowLargeFilesWithLinq(path);
