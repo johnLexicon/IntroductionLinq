@@ -72,12 +72,16 @@ namespace IntroductionLinq
             //    Console.WriteLine(item);
             //}
 
-            var values = MyLinq.Random().Where(v => v > 0.5).Take(5);
+            //The Take() method does that it does not create an infinite loop in the Random method.
+            //var values = MyLinq.Random().Where(v => v > 0.5).Take(5);
 
-            foreach (var value in values)
-            {
-                Console.WriteLine(value);
-            }
+            //foreach (var value in values)
+            //{
+            //    Console.WriteLine(value);
+            //}
+
+            var carRep = new Cars.CarRepository();
+            var cars = carRep.Retrieve();
         }
 
         private static void IterateWithIEnumerator(IEnumerator enumerator)
