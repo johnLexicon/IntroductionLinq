@@ -62,18 +62,22 @@ namespace IntroductionLinq
 
             //DelegateDefinitions.WriteArea(5);
 
-            var movies = rep.RetrieveMovies();
+            //var movies = rep.RetrieveMovies();
 
-            var query = movies.Filter<Movie>(m => m.Year > 2000);
+            //var query = movies.Filter<Movie>(m => m.Year > 2000);
             //var query = movies.Where<Movie>(m => m.Year > 2000);
 
-            Console.WriteLine("\n\n");
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            foreach (var item in query)
+            var values = MyLinq.Random().Where(v => v > 0.5).Take(5);
+
+            foreach (var value in values)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(value);
             }
-
         }
 
         private static void IterateWithIEnumerator(IEnumerator enumerator)

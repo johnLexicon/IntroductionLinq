@@ -9,6 +9,15 @@ namespace IntroductionLinq
     public static class MyLinq
     {
 
+        public static IEnumerable<double> Random()
+        {
+            var rnd = new Random();
+            while (true)
+            {
+                yield return rnd.NextDouble();
+            }
+        }
+
         public static IEnumerable<T> Filter<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             foreach(var item in source)
