@@ -7,6 +7,31 @@ namespace IntroductionLinq
     public class Repository
     {
 
+        public IEnumerable<Movie> RetrieveMovies()
+        {
+            return new List<Movie>
+            {
+                new Movie
+                {
+                    Title = "Rambo 10",
+                    Rating = 9.1,
+                    Year = 2020
+                },
+                new Movie
+                {
+                    Title = "Creed 4",
+                    Rating = 6.2,
+                    Year = 2021
+                },
+                new Movie
+                {
+                    Title = "Casablanca",
+                    Rating = 8.4,
+                    Year = 1942
+                }
+            };
+        }
+
         public List<Employee> RetrieveDevelopers()
         {
 
