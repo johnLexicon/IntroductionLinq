@@ -69,11 +69,11 @@ namespace IntroductionLinq
 
             Console.WriteLine("\n\n");
 
-            //foreach (var item in query)
-            //{
-            //    Console.WriteLine(item);
-            //}
-            
+            foreach (var item in query)
+            {
+                Console.WriteLine(item);
+            }
+
         }
 
         private static void IterateWithIEnumerator(IEnumerator enumerator)
