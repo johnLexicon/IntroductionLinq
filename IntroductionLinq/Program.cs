@@ -57,10 +57,23 @@ namespace IntroductionLinq
             //    Console.WriteLine(employee.Name);
             //}
 
-            Console.WriteLine(DelegateDefinitions.AddValues(8, 9));
-            Console.WriteLine(DelegateDefinitions.CalculateArea(6));
+            //Console.WriteLine(DelegateDefinitions.AddValues(8, 9));
+            //Console.WriteLine(DelegateDefinitions.CalculateArea(6));
 
-            DelegateDefinitions.WriteArea(5);
+            //DelegateDefinitions.WriteArea(5);
+
+            var movies = rep.RetrieveMovies();
+
+            var query = movies.Filter<Movie>(m => m.Year > 2000);
+            //var query = movies.Where<Movie>(m => m.Year > 2000);
+
+            Console.WriteLine("\n\n");
+
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            
         }
 
         private static void IterateWithIEnumerator(IEnumerator enumerator)
