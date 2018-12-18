@@ -50,6 +50,10 @@
       <Project>{1c708aeb-8f08-4979-8298-5121b4af90d2}</Project>
       <Name>Cars</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyLib\MyLib.csproj">
+      <Project>{b39353f2-2d0e-4130-b3e7-cb8600cd89d0}</Project>
+      <Name>MyLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
