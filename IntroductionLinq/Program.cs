@@ -80,25 +80,25 @@ namespace IntroductionLinq
             //    Console.WriteLine(value);
             //}
 
-            //var carRep = new Cars.CarRepository();
-            //var cars = carRep.Retrieve();
+            var carRep = new Cars.CarRepository();
+            var cars = carRep.Retrieve();
 
-            var list = new MyLib.LimitedList<string>(10);
-            list.Add("one");
-            list.Add("two");
-            list.Add("three");
-
-            list.Remove("two");
+            //var list = new MyLib.LimitedList<string>(10);
+            //list.Add("one");
+            //list.Add("two");
+            //list.Add("three");
 
             //for (int i = 0; i < list.Count; i++)
             //{
             //    Console.WriteLine(list[i]);
             //}
 
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            //var two = list.Take(2);
+
+            //foreach (var item in two)
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
 
         private static void IterateWithIEnumerator(IEnumerator enumerator)

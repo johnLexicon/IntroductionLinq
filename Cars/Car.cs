@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace Cars
@@ -24,7 +25,7 @@ namespace Cars
                 Year = int.Parse(cols[0]),
                 Manufacturer = cols[1],
                 Name = cols[2],
-                Displacement = double.Parse(cols[3]),
+                Displacement = double.Parse(cols[3], CultureInfo.InvariantCulture), //Invariant culture makes it possible to parse values using a dot instead of a comma.
                 Cylinders = int.Parse(cols[4]),
                 City = int.Parse(cols[5]),
                 Highway = int.Parse(cols[6]),
